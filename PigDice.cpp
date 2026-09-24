@@ -22,7 +22,7 @@ public:
         m_value = 0;
         m_numSides = 6;
     }
-    void set_numSides(int numSides) {
+    void setNumSides(int numSides) {
         switch (numSides) {
             case 4: m_numSides = 4; break;
             case 6: m_numSides = 6; break;
@@ -31,16 +31,16 @@ public:
         }
        // m_numSides = numSides;
     }
-    int get_numSides() {
+    int getNumSides() {
         return m_numSides;
     }
-    void set_value() {
+    void setValue() {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<int> dis(0, m_numSides);
         m_value = dis(gen);
     }
-    int get_value() {
+    int getValue() {
         return m_value;
     }
 };
@@ -106,16 +106,18 @@ void play_game(GameState &g) {
 
 }
 void roll(GameState &g) {
-    srand(time(NULL));
-    int die = rand() % 6 +1;
-    std::cout << "Die: " << die;
-    if (die == 1) {
+    // srand(time(NULL));
+    // int die = rand() % 6 +1;
+    Die myDie; //calls default constructor
+    myDie.setValue(); //call public method to roll die
+    std::cout << "Die: " << myDie.getValue();
+    if (myDie.getValue() == 1) {
         std::cout << "\nTurn over. No score.\n";
         g.score_this_turn = 0;
         g.turn_over = true;
     }
     else {
-        g.score_this_turn += die;
+        g.score_this_turn += myDie.getValue();
         std::cout << " - Running score this turn: " << g.score_this_turn;
     }
 
