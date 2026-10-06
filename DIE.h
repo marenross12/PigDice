@@ -9,14 +9,11 @@
 
     class Die {
     private:
-        int m_value;
-        int m_numSides;
+        int m_dievalue;
     public:
         Die();
-        void setNumSides(int numSides); //you can set to values 4, 6, or 8
-        int getNumSides();
-        void setValue();
-        int getValue();
+        void rollDie();
+        int getDieValue() const;
     };
 
 
