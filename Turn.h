@@ -13,10 +13,12 @@ public:
     Turn();
     //Turn(&);
     void takeTurn();
-    int getScoreThisTurn();
+    int getScoreThisTurn() const;
     void resetTurnOver();
-    int getTurnCount();
-    void resetGameOver();
+    int getTurnCount() const;
+    void resetScoreThisTurn();
+private:
+    void roll();
 
 };
 

@@ -10,7 +10,7 @@ private:
 public:
     PDGame();
 private:
-    void displayRules();
+    static void displayRules();
     void playGame();
 };
 

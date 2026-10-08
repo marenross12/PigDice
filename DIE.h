@@ -1,11 +1,6 @@
-//
-// Created by rossmn on 9/29/2026.
-//
 
 #ifndef PIGDICE_DIE_H
 #define PIGDICE_DIE_H
-
-
 
     class Die {
     private:
