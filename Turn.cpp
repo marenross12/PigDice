@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Turn.h"
+#include "PDGame.h" //8.
 Turn::Turn() {
      m_turnCount = 0;
      m_scoreThisTurn = 0;
@@ -7,11 +8,13 @@ Turn::Turn() {
      m_choice ='\0' ;
 
 }
-//Turn(&);
+void Turn::setParentGame(PDGame* parentGame) { //6.
+     m_parentGame = parentGame;
+}
 void Turn::takeTurn() {
      m_turnCount++;
      //Turn (part) needs access to m_gameScore in PDGame (whole)
-     std::cout << "\nTURN " << m_turnCount << " - " << "Game Score: "; //<< m_gameScore;
+     std::cout << "\nTURN " << m_turnCount << " - " << "Game Score: " << m_parentGame->getGameScore(); //9.
      while (!m_turnOver) {
           std::cout << "\nroll or hold? (r/h): ";
           std::cin >> m_choice;
