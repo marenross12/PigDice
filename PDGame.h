@@ -3,7 +3,7 @@
 #include "Turn.h"
 
 class PDGame {
-private:
+protected:
     Turn m_myTurn;
     bool m_gameOver;
     int m_gameScore;
@@ -12,6 +12,7 @@ public:
     int getGameScore() const; //1.
 private:
     void displayRules();
+    public:
     void playGame();
 };
 
